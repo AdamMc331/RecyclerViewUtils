@@ -16,24 +16,33 @@ import android.view.View;
  */
 public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
 
+    // Attributes for the divider
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
     };
+    private static final int DIVIDER_POSITION = 0;
 
     // List orientations
     private static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
     public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
     private int orientation;
 
+    /**
+     * The actual divider that is displayed.
+     */
     private final Drawable divider;
 
     public CoreDividerItemDecoration(Context context, int orientation) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
-        divider = a.getDrawable(0);
+        divider = a.getDrawable(DIVIDER_POSITION);
         a.recycle();
         setOrientation(orientation);
     }
 
+    /**
+     * Sets the orientation of this item decoration. An exception is thrown if it is not one of
+     * the two given orientations.
+     */
     private void setOrientation(int orientation) {
         if (orientation != HORIZONTAL_LIST && orientation != VERTICAL_LIST) {
             throw new IllegalArgumentException("invalid orientation");
@@ -42,6 +51,9 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
         this.orientation = orientation;
     }
 
+    /**
+     * Draws the divider depending on the orientation of the RecyclerView.
+     */
     @Override
     public void onDraw(Canvas c, RecyclerView parent) {
         switch(orientation) {
@@ -56,6 +68,9 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    /**
+     * Draws a divider for a vertical RecyclerView list.
+     */
     private void drawVertical(Canvas c, RecyclerView parent) {
         final int left = parent.getPaddingLeft();
         final int right = parent.getWidth() - parent.getPaddingRight();
@@ -72,6 +87,9 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    /**
+     * Draws a divider for a horizontal RecyclerView list.
+     */
     private void drawHorizontal(Canvas c, RecyclerView parent) {
         final int top = parent.getPaddingTop();
         final int bottom = parent.getHeight() - parent.getPaddingBottom();
@@ -88,6 +106,9 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    /**
+     * Determines the offset of the divider based on the orientation of the list.
+     */
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
         switch(orientation) {
