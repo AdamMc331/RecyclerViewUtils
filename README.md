@@ -6,7 +6,21 @@ This library contains a few core classes that are often used alongside a Recycle
 Usage
 -----
 
-This library is not yet in Jcenter, please check back soon!
+To have access to the library, add the dependency to your build.gradle:
+
+```java
+	compile 'com.adammcneilly:recyclerviewutils:1.0.0'
+```
+
+At the time of publication, the library has not yet been linked to JCenter, so you will also have to add the link to my Maven repository as well:
+
+```java
+	repositories {
+    	maven {
+        	url  "http://dl.bintray.com/adammc331/maven"
+    	}
+	}
+```
 
 CoreViewHolder
 --------------
