@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AdamUtils</string>
+    <string name="account_name">Account Name</string>
+    <string name="account_balance">Account Balance</string>
+    <string name="add_account">Add Account</string>
+    <string name="submit">Submit</string>
+</resources>
