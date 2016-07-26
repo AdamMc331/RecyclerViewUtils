@@ -8,7 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.adammcneilly.recyclerviewutils.CoreDividerItemDecoration;
+import com.adammcneilly.CoreDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

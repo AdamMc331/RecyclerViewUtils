@@ -1,4 +1,4 @@
-package com.adammcneilly.recyclerviewutils;
+package com.adammcneilly;
 
 import android.content.Context;
 import android.content.res.TypedArray;

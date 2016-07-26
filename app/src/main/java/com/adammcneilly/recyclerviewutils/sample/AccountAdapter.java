@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.adammcneilly.recyclerviewutils.CoreRecyclerViewAdapter;
-import com.adammcneilly.recyclerviewutils.CoreViewHolder;
+import com.adammcneilly.CoreRecyclerViewAdapter;
+import com.adammcneilly.CoreViewHolder;
 
 import java.util.List;
 

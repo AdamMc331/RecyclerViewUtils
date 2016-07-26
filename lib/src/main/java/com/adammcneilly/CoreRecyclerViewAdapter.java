@@ -1,4 +1,4 @@
-package com.adammcneilly.recyclerviewutils;
+package com.adammcneilly;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
