@@ -3,7 +3,7 @@
 RecyclerViewUtils Library
 =============
 
-This library contains a few core classes that are often used alongside a RecyclerView, and are intended to remove some of the tidious boilerplate code from being written many times.
+This library contains a few core classes that are often used alongside a RecyclerView, and are intended to remove some of the tedious boilerplate code from being written many times.
 
 Usage
 -----
