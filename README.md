@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:1.0.1'
+	compile 'com.adammcneilly:recyclerviewutils:1.0.2'
 ```
 
 
@@ -87,6 +87,10 @@ And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 
 Version History
 ---------------
+
+####1.0.2
+ - Added a default constructor and removed adapter's dependency on a Context.
+ - Added the List interface to the adapter to allow easier addition/removal of items.
 
 ####1.0.1
  - Added View.OnClickListener interface to the CoreViewHolder.
