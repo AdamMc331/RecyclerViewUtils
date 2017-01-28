@@ -8,12 +8,14 @@ import android.view.View;
  *
  * Created by adam.mcneilly on 7/26/16.
  */
-public abstract class CoreViewHolder<T> extends RecyclerView.ViewHolder {
+public abstract class CoreViewHolder<T> extends RecyclerView.ViewHolder implements View.OnClickListener {
     /**
      * Default constructor.
      */
     public CoreViewHolder(View view) {
         super(view);
+
+        view.setOnClickListener(this);
     }
 
     /**
@@ -21,4 +23,12 @@ public abstract class CoreViewHolder<T> extends RecyclerView.ViewHolder {
      * @param item The item to display in this ViewHolder.
      */
     protected abstract void bindItem(T item);
+
+    /**
+     * Called when the list item is clicked.
+     */
+    @Override
+    public void onClick(View v) {
+
+    }
 }

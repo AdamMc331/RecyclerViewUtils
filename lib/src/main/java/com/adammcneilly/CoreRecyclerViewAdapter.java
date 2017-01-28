@@ -3,6 +3,7 @@ package com.adammcneilly;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ public abstract class CoreRecyclerViewAdapter<T, K extends CoreViewHolder<T>> ex
     /**
      * The items to be displayed in this adapter.
      */
-    protected List<T> items;
+    private List<T> items;
 
     /**
      * Default constructor.
