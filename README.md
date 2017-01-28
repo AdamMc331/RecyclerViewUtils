@@ -42,6 +42,8 @@ public class AccountViewHolder extends CoreViewHolder<Account> {
 }
 ```
 
+This class also implements the `View.OnClickListener` interface. If you want to handle clicks in your ReyclerView, just ovveride the `onClick()` method in your ViewHolder class.
+
 CoreRecyclerViewAdapter
 -----------------------
 
