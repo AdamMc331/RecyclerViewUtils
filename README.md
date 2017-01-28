@@ -83,6 +83,16 @@ This library was created by [Adam McNeilly](http://adammcneilly.com).
 
 And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 
+Version History
+---------------
+
+####1.0.1
+ - Added View.OnClickListener interface to the CoreViewHolder.
+ - Code cleanup and removed deprecated methods.
+
+####1.0.0
+ - Initial release.
+
 License
 -------
 
