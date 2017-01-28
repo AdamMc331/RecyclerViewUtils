@@ -1,9 +1,8 @@
 package com.adammcneilly;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,20 +13,15 @@ import java.util.List;
  */
 public abstract class CoreRecyclerViewAdapter<T, K extends CoreViewHolder<T>> extends RecyclerView.Adapter<K>{
     /**
-     * The Context this adapter is displayed in.
-     */
-    protected Context context;
-
-    /**
      * The items to be displayed in this adapter.
      */
     private List<T> items;
 
-    /**
-     * Default constructor.
-     */
-    public CoreRecyclerViewAdapter(Context context, List<T> items) {
-        this.context = context;
+    public CoreRecyclerViewAdapter() {
+        this.items = new ArrayList<>();
+    }
+
+    public CoreRecyclerViewAdapter(List<T> items) {
         this.items = items;
     }
 
