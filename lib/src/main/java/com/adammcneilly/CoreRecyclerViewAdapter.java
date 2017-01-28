@@ -3,6 +3,7 @@ package com.adammcneilly;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ public abstract class CoreRecyclerViewAdapter<T, K extends CoreViewHolder<T>> ex
     /**
      * The items to be displayed in this adapter.
      */
-    protected List<T> items;
+    private List<T> items;
 
     /**
      * Default constructor.
@@ -97,5 +98,15 @@ public abstract class CoreRecyclerViewAdapter<T, K extends CoreViewHolder<T>> ex
             // We don't have an index, so just call notifyDataSetChanged
             notifyDataSetChanged();
         }
+    }
+
+    /**
+     * Swaps two items.
+     * @param first The index of the first item.
+     * @param second The index of the second item.
+     */
+    public void swap(int first, int second) {
+        Collections.swap(items, first, second);
+        notifyItemMoved(first, second);
     }
 }

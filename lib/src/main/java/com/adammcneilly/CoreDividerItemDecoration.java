@@ -32,6 +32,11 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
      */
     private final Drawable divider;
 
+    // Since vertical is so common, let's make that default.
+    public CoreDividerItemDecoration(Context context) {
+        this(context, VERTICAL_LIST);
+    }
+
     public CoreDividerItemDecoration(Context context, int orientation) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         divider = a.getDrawable(DIVIDER_POSITION);
@@ -55,7 +60,7 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
      * Draws the divider depending on the orientation of the RecyclerView.
      */
     @Override
-    public void onDraw(Canvas c, RecyclerView parent) {
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         switch(orientation) {
             case VERTICAL_LIST:
                 drawVertical(c, parent);
@@ -110,13 +115,14 @@ public class CoreDividerItemDecoration extends RecyclerView.ItemDecoration {
      * Determines the offset of the divider based on the orientation of the list.
      */
     @Override
-    public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         switch(orientation) {
             case VERTICAL_LIST:
                 outRect.set(0, 0, 0, divider.getIntrinsicHeight());
                 break;
             case HORIZONTAL_LIST:
                 outRect.set(0, 0, divider.getIntrinsicWidth(), 0);
+                break;
         }
     }
 }
