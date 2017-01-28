@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.add_fab);
 
         // Setup adapter
-        accountAdapter = new AccountAdapter(this, getAccounts());
+        accountAdapter = new AccountAdapter(getAccounts());
 
         // Setup RecyclerView
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

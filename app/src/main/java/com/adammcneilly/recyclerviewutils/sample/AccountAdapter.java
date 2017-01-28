@@ -1,6 +1,5 @@
 package com.adammcneilly.recyclerviewutils.sample;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +17,13 @@ import java.util.List;
  * Created by adam.mcneilly on 7/26/16.
  */
 class AccountAdapter extends CoreRecyclerViewAdapter<Account, AccountAdapter.AccountViewHolder>{
-    AccountAdapter(Context context, List<Account> accounts) {
-        super(context, accounts);
+    AccountAdapter(List<Account> accounts) {
+        super(accounts);
     }
 
     @Override
     public AccountViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new AccountViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_account, parent, false));
+        return new AccountViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_account, parent, false));
     }
 
     class AccountViewHolder extends CoreViewHolder<Account> {
