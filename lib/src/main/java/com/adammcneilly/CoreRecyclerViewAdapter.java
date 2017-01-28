@@ -99,14 +99,4 @@ public abstract class CoreRecyclerViewAdapter<T, K extends CoreViewHolder<T>> ex
             notifyDataSetChanged();
         }
     }
-
-    /**
-     * Swaps two items.
-     * @param first The index of the first item.
-     * @param second The index of the second item.
-     */
-    public void swap(int first, int second) {
-        Collections.swap(items, first, second);
-        notifyItemMoved(first, second);
-    }
 }
