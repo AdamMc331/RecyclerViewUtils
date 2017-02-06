@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:1.0.2'
+	compile 'com.adammcneilly:recyclerviewutils:1.0.3'
 ```
 
 

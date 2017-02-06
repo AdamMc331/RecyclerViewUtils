@@ -19,7 +19,7 @@ public abstract class CoreRecyclerViewAdapter<T, K extends CoreViewHolder<T>> ex
     /**
      * The items to be displayed in this adapter.
      */
-    private List<T> items;
+    protected List<T> items;
 
     public CoreRecyclerViewAdapter() {
         this.items = new ArrayList<>();
