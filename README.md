@@ -91,6 +91,9 @@ Version History
 ####1.0.4
  - Updated support library version.
 
+####1.0.3
+ - Minor update that made the `items` field protected, so sub classes could make use of it.
+
 ####1.0.2
  - Added a default constructor and removed adapter's dependency on a Context.
  - Added the List interface to the adapter to allow easier addition/removal of items.
