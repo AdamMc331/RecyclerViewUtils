@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:1.0.3'
+	compile 'com.adammcneilly:recyclerviewutils:1.0.4'
 ```
 
 
@@ -87,6 +87,9 @@ And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 
 Version History
 ---------------
+
+####1.0.4
+ - Updated support library version.
 
 ####1.0.2
  - Added a default constructor and removed adapter's dependency on a Context.
