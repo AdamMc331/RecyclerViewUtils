@@ -88,6 +88,9 @@ And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 Version History
 ---------------
 
+####1.0.5
+ - Updated support library version.
+
 ####1.0.4
  - Updated support library version.
 
