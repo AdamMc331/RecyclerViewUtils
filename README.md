@@ -88,24 +88,24 @@ And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 Version History
 ---------------
 
-####1.0.5
+#### 1.0.5
  - Updated support library version.
 
-####1.0.4
+#### 1.0.4
  - Updated support library version.
 
-####1.0.3
+#### 1.0.3
  - Minor update that made the `items` field protected, so sub classes could make use of it.
 
-####1.0.2
+#### 1.0.2
  - Added a default constructor and removed adapter's dependency on a Context.
  - Added the List interface to the adapter to allow easier addition/removal of items.
 
-####1.0.1
+#### 1.0.1
  - Added View.OnClickListener interface to the CoreViewHolder.
  - Code cleanup and removed deprecated methods.
 
-####1.0.0
+#### 1.0.0
  - Initial release.
 
 License
