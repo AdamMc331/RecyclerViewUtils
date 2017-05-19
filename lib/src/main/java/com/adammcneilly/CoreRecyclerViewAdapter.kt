@@ -46,7 +46,7 @@ abstract class CoreRecyclerViewAdapter<T, K : CoreViewHolder<T>>(protected var i
 
     override fun add(element: T): Boolean {
         val result = items.add(element)
-        notifyDataSetChanged()
+        notifyItemInserted(items.size - 1)
         return result
     }
 
@@ -73,13 +73,13 @@ abstract class CoreRecyclerViewAdapter<T, K : CoreViewHolder<T>>(protected var i
 
     override operator fun set(index: Int, element: T): T {
         val item = items.set(index, element)
-        notifyDataSetChanged()
+        notifyItemChanged(index)
         return item
     }
 
     override fun add(index: Int, element: T) {
         items.add(index, element)
-        notifyDataSetChanged()
+        notifyItemInserted(index)
     }
 
     override fun contains(element: T): Boolean {
@@ -124,7 +124,7 @@ abstract class CoreRecyclerViewAdapter<T, K : CoreViewHolder<T>>(protected var i
 
     override fun removeAt(index: Int): T {
         val removed = items.removeAt(index)
-        notifyDataSetChanged()
+        notifyItemRemoved(index)
         return removed
     }
 
