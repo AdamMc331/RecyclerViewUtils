@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(accountAdapter);
-        recyclerView.addItemDecoration(new CoreDividerItemDecoration(this, CoreDividerItemDecoration.VERTICAL_LIST));
+        recyclerView.addItemDecoration(new CoreDividerItemDecoration(this, CoreDividerItemDecoration.Companion.getVERTICAL_LIST()));
 
         // Setup fab
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
