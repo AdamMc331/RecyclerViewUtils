@@ -1,5 +1,6 @@
 package com.adammcneilly.recyclerviewutils.sample;
 
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,13 +39,13 @@ class AccountAdapter extends CoreRecyclerViewAdapter<Account, AccountAdapter.Acc
         }
 
         @Override
-        protected void bindItem(Account item) {
+        public void bindItem(Account item) {
             this.tvName.setText(item.getName());
             this.tvBalance.setText(String.valueOf(item.getBalance()));
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(@NonNull View v) {
             // Toast
             Toast.makeText(v.getContext(), "Clicked item: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
         }
