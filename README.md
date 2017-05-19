@@ -99,6 +99,7 @@ internal class AccountAdapter(accounts: MutableList<Account>) : CoreRecyclerView
     internal inner class AccountViewHolder(view: View) : CoreViewHolder<Account>(view) {
         ...
     }
+}
 ```
 
 CoreDividerItemDecoration
