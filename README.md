@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:1.0.4'
+	compile 'com.adammcneilly:recyclerviewutils:1.0.5'
 ```
 
 
@@ -38,6 +38,20 @@ public class AccountViewHolder extends CoreViewHolder<Account> {
     protected void bindItem(Account item) {
         this.tvName.setText(item.getName());
         this.tvBalance.setText(String.valueOf(item.getBalance()));
+    }
+}
+```
+
+Or in Kotlin:
+
+```kotlin
+internal inner class AccountViewHolder(view: View) : CoreViewHolder<Account>(view) {
+    private val tvName: TextView = view.findViewById(R.id.account_name) as TextView
+    private val tvBalance: TextView = view.findViewById(R.id.account_balance) as TextView
+
+    override fun bindItem(item: Account) {
+        this.tvName.text = item.name
+        this.tvBalance.text = item.balance.toString()
     }
 }
 ```
@@ -71,6 +85,20 @@ public class AccountAdapter extends CoreRecyclerViewAdapter<Account, AccountAdap
         ...
     }
 }
+```
+
+Or in Kotlin:
+
+```kotlin
+internal class AccountAdapter(accounts: MutableList<Account>) : CoreRecyclerViewAdapter<Account, AccountAdapter.AccountViewHolder>(accounts) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
+        return AccountViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_account, parent, false))
+    }
+
+    internal inner class AccountViewHolder(view: View) : CoreViewHolder<Account>(view) {
+        ...
+    }
 ```
 
 CoreDividerItemDecoration
