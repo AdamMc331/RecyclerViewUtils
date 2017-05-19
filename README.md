@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:1.0.4'
+	compile 'com.adammcneilly:recyclerviewutils:1.0.5'
 ```
 
 
@@ -42,6 +42,20 @@ public class AccountViewHolder extends CoreViewHolder<Account> {
 }
 ```
 
+Or in Kotlin:
+
+```kotlin
+internal inner class AccountViewHolder(view: View) : CoreViewHolder<Account>(view) {
+    private val tvName: TextView = view.findViewById(R.id.account_name) as TextView
+    private val tvBalance: TextView = view.findViewById(R.id.account_balance) as TextView
+
+    override fun bindItem(item: Account) {
+        this.tvName.text = item.name
+        this.tvBalance.text = item.balance.toString()
+    }
+}
+```
+
 This class also implements the `View.OnClickListener` interface. If you want to handle clicks in your ReyclerView, just ovveride the `onClick()` method in your ViewHolder class.
 
 CoreRecyclerViewAdapter
@@ -68,6 +82,21 @@ public class AccountAdapter extends CoreRecyclerViewAdapter<Account, AccountAdap
     }
 
     public class AccountViewHolder extends CoreViewHolder<Account> {
+        ...
+    }
+}
+```
+
+Or in Kotlin:
+
+```kotlin
+internal class AccountAdapter(accounts: MutableList<Account>) : CoreRecyclerViewAdapter<Account, AccountAdapter.AccountViewHolder>(accounts) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
+        return AccountViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_account, parent, false))
+    }
+
+    internal inner class AccountViewHolder(view: View) : CoreViewHolder<Account>(view) {
         ...
     }
 }
