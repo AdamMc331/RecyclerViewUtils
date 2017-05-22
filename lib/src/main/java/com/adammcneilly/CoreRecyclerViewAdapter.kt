@@ -10,7 +10,7 @@ import kotlin.collections.ArrayList
  *
  * Created by adam.mcneilly on 7/26/16.
  */
-abstract class CoreRecyclerViewAdapter<T, K : CoreViewHolder<T>>(protected var items: MutableList<T> = ArrayList<T>()) : RecyclerView.Adapter<K>(), MutableList<T> {
+abstract class CoreRecyclerViewAdapter<T, K : CoreViewHolder<T>>(var items: MutableList<T> = ArrayList<T>()) : RecyclerView.Adapter<K>(), MutableList<T> {
 
     /**
      * Assuming the user is only maintaing one list, return the size of the list.
