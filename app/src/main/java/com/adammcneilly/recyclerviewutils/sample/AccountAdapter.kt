@@ -16,17 +16,19 @@ import com.adammcneilly.CoreViewHolder
  */
 internal class AccountAdapter(accounts: MutableList<Account>) : CoreRecyclerViewAdapter<Account, AccountAdapter.AccountViewHolder>(accounts) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
-        return AccountViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_account, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): AccountViewHolder {
+        val context = parent?.context
+        val view = LayoutInflater.from(context)?.inflate(R.layout.list_item_account, parent, false)
+        return AccountViewHolder(view)
     }
 
-    internal inner class AccountViewHolder(view: View) : CoreViewHolder<Account>(view) {
-        private val tvName: TextView = view.findViewById(R.id.account_name) as TextView
-        private val tvBalance: TextView = view.findViewById(R.id.account_balance) as TextView
+    internal inner class AccountViewHolder(view: View?) : CoreViewHolder<Account>(view) {
+        private val tvName = view?.findViewById(R.id.account_name) as? TextView
+        private val tvBalance = view?.findViewById(R.id.account_balance) as? TextView
 
-        override fun bindItem(item: Account) {
-            this.tvName.text = item.name
-            this.tvBalance.text = item.balance.toString()
+        override fun bindItem(item: Account?) {
+            this.tvName?.text = item?.name
+            this.tvBalance?.text = item?.balance.toString()
         }
 
         override fun onClick(v: View) {

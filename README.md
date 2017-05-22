@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:2.0.0'
+	compile 'com.adammcneilly:recyclerviewutils:2.0.1'
 ```
 
 
@@ -116,6 +116,9 @@ And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 
 Version History
 ---------------
+
+#### 2.0.1
+ - Made a number of parameters nullable.
 
 #### 2.0.0
  - Converted library to Kotlin.

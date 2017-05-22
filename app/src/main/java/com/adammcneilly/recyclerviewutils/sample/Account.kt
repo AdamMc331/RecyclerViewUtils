@@ -11,7 +11,7 @@ import android.os.Parcelable
 class Account : Parcelable {
     var name: String? = null
         private set
-    var balance: Double = 0.toDouble()
+    var balance: Double = 0.0
         private set
 
     constructor(name: String, balance: Double) {

@@ -8,17 +8,17 @@ import android.view.View
  *
  * Created by adam.mcneilly on 7/26/16.
  */
-abstract class CoreViewHolder<in T>(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+abstract class CoreViewHolder<in T>(view: View?) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
     init {
-        view.setOnClickListener(this)
+        view?.setOnClickListener(this)
     }
 
     /**
      * Binds an object to this ViewHolder's itemView.
      * @param item The item to display in this ViewHolder.
      */
-    abstract fun bindItem(item: T)
+    abstract fun bindItem(item: T?)
 
     /**
      * Called when the list item is clicked.
