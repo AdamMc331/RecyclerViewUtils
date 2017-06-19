@@ -11,7 +11,7 @@ Usage
 To have access to the library, add the dependency to your build.gradle:
 
 ```java
-	compile 'com.adammcneilly:recyclerviewutils:2.0.1'
+	compile 'com.adammcneilly:recyclerviewutils:2.0.2'
 ```
 
 
@@ -116,6 +116,9 @@ And reviewed by [Maurício Pessoa](https://github.com/Mauker1).
 
 Version History
 ---------------
+
+#### 2.0.2
+ - Added long click listener to CoreViewHolder.
 
 #### 2.0.1
  - Made a number of parameters nullable.
