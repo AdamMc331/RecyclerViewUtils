@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 ext {
     PUBLISH_GROUP_ID = 'com.adammcneilly'
     PUBLISH_ARTIFACT_ID = 'recyclerviewutils'
-    PUBLISH_VERSION = '2.0.1'
+    PUBLISH_VERSION = '2.0.2'
 }
 
 //noinspection GroovyMissingReturnStatement
@@ -15,8 +15,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 8
-        versionName "2.0.1"
+        versionCode 9
+        versionName "2.0.2"
     }
     buildTypes {
         release {
