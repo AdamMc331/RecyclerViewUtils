@@ -8,10 +8,11 @@ import android.view.View
  *
  * Created by adam.mcneilly on 7/26/16.
  */
-abstract class CoreViewHolder<in T>(view: View?) : RecyclerView.ViewHolder(view), View.OnClickListener {
+abstract class CoreViewHolder<in T>(view: View?) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
 
     init {
         view?.setOnClickListener(this)
+        view?.setOnLongClickListener(this)
     }
 
     /**
@@ -28,5 +29,15 @@ abstract class CoreViewHolder<in T>(view: View?) : RecyclerView.ViewHolder(view)
      */
     override fun onClick(v: View) {
 
+    }
+
+    /**
+     * Called when the list item is long clicked.
+     *
+     * This doesn't have to be overriden because this is abstract, but I did it so the user
+     * wouldn't have to if they don't want to use it.
+     */
+    override fun onLongClick(v: View?): Boolean {
+        return false
     }
 }
