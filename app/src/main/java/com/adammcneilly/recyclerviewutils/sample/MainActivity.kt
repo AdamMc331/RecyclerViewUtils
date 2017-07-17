@@ -11,7 +11,7 @@ import com.adammcneilly.CoreDividerItemDecoration
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private var accountAdapter: AccountAdapter? = null
+    private var accountAdapter = AccountAdapter(accounts)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
         // Get items
         val recyclerView = findViewById(R.id.account_recycler_view) as RecyclerView
         val floatingActionButton = findViewById(R.id.add_fab) as FloatingActionButton
-
-        // Setup adapter
-        accountAdapter = AccountAdapter(accounts)
 
         // Setup RecyclerView
         val linearLayoutManager = LinearLayoutManager(this)
@@ -38,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         if (requestCode == ADD_ACCOUNT && resultCode == Activity.RESULT_OK) {
             val account = data.getParcelableExtra<Account>(EXTRA_ACCOUNT)
-            accountAdapter?.add(account)
+            accountAdapter.add(account)
         }
     }
 

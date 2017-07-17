@@ -20,12 +20,12 @@ class AddAccountActivity : AppCompatActivity() {
 
         val accountName = findViewById(R.id.account_name) as TextInputEditText
         val accountBalance = findViewById(R.id.account_balance) as TextInputEditText
-
-        val submitButton = findViewById(R.id.submit) as Button
+        val submitButton = findViewById(R.id.submit)
 
         submitButton.setOnClickListener {
             // If we have values, get account, set data, finish.
             if (!accountName.text.toString().isEmpty() && !accountBalance.text.toString().isEmpty()) {
+
                 val account = Account(
                         accountName.text.toString(),
                         accountBalance.text.toString().toDouble()

@@ -22,17 +22,16 @@ internal class AccountAdapter(accounts: MutableList<Account>) : CoreRecyclerView
         return AccountViewHolder(view)
     }
 
-    internal inner class AccountViewHolder(view: View?) : CoreViewHolder<Account>(view) {
-        private val tvName = view?.findViewById(R.id.account_name) as? TextView
-        private val tvBalance = view?.findViewById(R.id.account_balance) as? TextView
+    class AccountViewHolder(view: View?) : CoreViewHolder<Account>(view) {
+        private val tvName = view?.findViewById(R.id.account_name) as TextView
+        private val tvBalance = view?.findViewById(R.id.account_balance) as TextView
 
         override fun bindItem(item: Account?) {
-            this.tvName?.text = item?.name
-            this.tvBalance?.text = item?.balance.toString()
+            this.tvName.text = item?.name
+            this.tvBalance.text = item?.balance.toString()
         }
 
         override fun onClick(v: View) {
-            // Toast
             Toast.makeText(v.context, "Clicked item: " + adapterPosition, Toast.LENGTH_SHORT).show()
         }
     }

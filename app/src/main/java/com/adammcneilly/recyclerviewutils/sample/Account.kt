@@ -8,21 +8,9 @@ import android.os.Parcelable
  *
  * Created by adam.mcneilly on 7/26/16.
  */
-class Account : Parcelable {
-    var name: String? = null
-        private set
-    var balance: Double = 0.0
-        private set
+data class Account(var name: String? = "", var balance: Double = 0.0) : Parcelable {
 
-    constructor(name: String, balance: Double) {
-        this.name = name
-        this.balance = balance
-    }
-
-    constructor(parcel: Parcel) {
-        this.name = parcel.readString()
-        this.balance = parcel.readDouble()
-    }
+    constructor(parcel: Parcel): this(parcel.readString(), parcel.readDouble())
 
     override fun describeContents(): Int {
         return 0
